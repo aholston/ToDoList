@@ -29,10 +29,10 @@ class Main extends Component {
   render() {
     return(
       <div>
-      <h1>ToDo's</h1>
-      <Add onSubmit={this.onSubmit}/>
-      <Todos todos={this.state.todos} checkTodo={this.checkTodo} />
-    </div>
+        <h1>ToDo's</h1>
+        <Add onSubmit={this.onSubmit}/>
+        <Todos todos={this.state.todos} checkTodo={this.checkTodo} />
+      </div>
   )
 };
 }
