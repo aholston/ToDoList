@@ -9,11 +9,19 @@ class Main extends Component {
       todos: []
     }
     this.onSubmit = this.onSubmit.bind(this)
-
+    this.deactivate = this.deactivate.bind(this)
   }
 
-  checkTodo(e) {
-    console.log(e.target.name)
+
+  deactivate(obj) {
+    this.setState = {
+      todos: this.state.todos.find((todo) => {
+        if (todo === obj) {
+          todo.active = false;
+        }
+      })
+    }
+    console.log(this.state)
   }
 
   onSubmit(e) {
@@ -31,7 +39,7 @@ class Main extends Component {
       <div>
         <h1>ToDo's</h1>
         <Add onSubmit={this.onSubmit}/>
-        <Todos todos={this.state.todos} checkTodo={this.checkTodo} />
+        <Todos todos={this.state.todos} checkTodo={this.checkTodo} deactivate = {this.deactivate} />
       </div>
   )
 };
