@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 
 
 class Todos extends Component {
-  constructor() {
-    super()
-
-  }
-
-
   render() {
     let todosList;
     todosList = this.props.todos.map((obj, idx) => {
