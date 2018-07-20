@@ -9,8 +9,6 @@ class Todos extends Component {
 
   checkTodo(e) {
     let thisTodo = this.props.todos.find((obj, idx) => {
-      console.log(obj);
-      console.log(e.target.name)
       if (obj.todo === e.target.name) {
         return obj
       }
@@ -19,12 +17,13 @@ class Todos extends Component {
   }
 
   render() {
-  let todosList;
-  todosList = this.props.todos.map((obj, idx) => {
-    return (
-      <li key={idx}><button name={obj.todo} onClick={this.checkTodo}>Check</button>{obj.todo}</li>
-    )
-  })
+    let todosList;
+    console.log(this.props)
+    todosList = this.props.todos.map((obj, idx) => {
+      return (
+        <li key={idx}><button name={obj.todo} onClick={this.checkTodo}>Check</button>{obj.todo}</li>
+      )
+    })
 
   return (
     <div>

@@ -14,14 +14,13 @@ class Main extends Component {
 
 
   deactivate(obj) {
-    this.setState = {
+    this.setState({
       todos: this.state.todos.find((todo) => {
         if (todo === obj) {
           todo.active = false;
         }
       })
-    }
-    console.log(this.state)
+    })
   }
 
   onSubmit(e) {
@@ -29,8 +28,6 @@ class Main extends Component {
     this.setState({
       todos: this.state.todos.concat({active: true, todo: e.target.elements.todo.value})
     })
-
-    console.log(this.state.todos)
   }
 
 
@@ -39,7 +36,7 @@ class Main extends Component {
       <div>
         <h1>ToDo's</h1>
         <Add onSubmit={this.onSubmit}/>
-        <Todos todos={this.state.todos} checkTodo={this.checkTodo} deactivate = {this.deactivate} />
+        <Todos todos={this.state.todos} deactivate={this.deactivate} />
       </div>
   )
 };
