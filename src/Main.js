@@ -13,10 +13,15 @@ class Main extends Component {
   }
 
 
-  deactivate(obj) {
+  deactivate(e) {
+    let thisTodo = this.state.todos.find((obj, idx) => {
+        if (obj.todo === e.target.name) {
+           return obj
+         }
+       })
     this.setState({
       todos: this.state.todos.find((todo) => {
-        if (todo === obj) {
+        if (todo === thisTodo) {
           todo.active = false;
         }
       })
